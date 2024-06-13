@@ -1,0 +1,13 @@
+#!/bin/bash
+set -e
+
+cat <<EOF > /docker-entrypoint-initdb.d/init.sql
+CREATE DATABASE IF NOT EXISTS ${MYSQL_DATABASE};
+
+GRANT ALL PRIVILEGES ON ${MYSQL_DATABASE}.* TO '${MYSQL_USER}'@'%' IDENTIFIED BY '${MYSQL_PASSWORD}';
+GRANT ALL PRIVILEGES ON ${MYSQL_DATABASE}.* TO '${MYSQL_USER}'@'localhost' IDENTIFIED BY '${MYSQL_PASSWORD}';
+
+FLUSH PRIVILEGES;
+EOF
+
+/docker-entrypoint.sh mysqld

@@ -1,4 +1,4 @@
-FROM php:8.1-fpm-buster
+FROM php:8.2.0-fpm-buster
 SHELL ["/bin/bash", "-oeux", "pipefail", "-c"]
 
 ARG WORKDIR \

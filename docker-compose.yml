@@ -52,6 +52,8 @@ services:
         target: /root/.config/psysh
         volume:
           nocopy: true
+    environment:
+      - TZ=${TZ}
   db:
     container_name: db
     build:
@@ -73,6 +75,7 @@ services:
       - MYSQL_USER=${MYSQL_USER}
       - MYSQL_PASSWORD=${MYSQL_PASSWORD}
       - MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD}
+      - TZ=${TZ}
   mail:
     container_name: mail
     image: mailhog/mailhog

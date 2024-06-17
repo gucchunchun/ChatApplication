@@ -1,4 +1,4 @@
-<mxfile host="Electron" modified="2024-06-17T06:30:20.221Z" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/24.4.13 Chrome/124.0.6367.207 Electron/30.0.6 Safari/537.36" etag="b6pRf-NAsjWj9UdMu5u0" version="24.4.13" type="device">
+<mxfile host="Electron" modified="2024-06-17T06:30:14.452Z" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/24.4.13 Chrome/124.0.6367.207 Electron/30.0.6 Safari/537.36" etag="KwXzAcUHgtV5BUP-tkwv" version="24.4.13" type="device">
   <diagram name="Page-1" id="c4acf3e9-155e-7222-9cf6-157b1a14988f">
     <mxGraphModel dx="530" dy="404" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" background="none" math="0" shadow="0">
       <root>
@@ -111,7 +111,7 @@
         <mxCell id="vdxRl6zEinVoFhlPayeT-26" value="+ MESSAGE_RULES&lt;span style=&quot;background-color: initial;&quot;&gt;: array&lt;/span&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="vdxRl6zEinVoFhlPayeT-23" vertex="1">
           <mxGeometry y="104" width="200" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="vdxRl6zEinVoFhlPayeT-38" value="- id: int = null" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="vdxRl6zEinVoFhlPayeT-23" vertex="1">
+        <mxCell id="vdxRl6zEinVoFhlPayeT-38" value="- is: string = null" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="vdxRl6zEinVoFhlPayeT-23" vertex="1">
           <mxGeometry y="134" width="200" height="26" as="geometry" />
         </mxCell>
         <mxCell id="vdxRl6zEinVoFhlPayeT-27" value="- room: ChatRoomEntity" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="vdxRl6zEinVoFhlPayeT-23" vertex="1">

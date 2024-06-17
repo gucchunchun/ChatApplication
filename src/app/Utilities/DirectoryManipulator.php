@@ -19,9 +19,7 @@ class DirectoryManipulator
   {
     if ($this->isExist($path)) return false;
 
-    if ($this->files->isDirectory($path)) {
-      $this->files->makeDirectory($path, 0755, true);
-    }
+    $this->files->makeDirectory($path, 0755, true);
     return true;
   }
 

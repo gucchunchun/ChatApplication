@@ -162,3 +162,5 @@ policy-m:
 	docker compose exec app php artisan make:policy ${NAME}Policy --model=${NAME}
 command:
 	docker compose exec app php artisan make:command ${NAME}
+entity:
+	docker compose exec app php artisan make:entity ${NAME}

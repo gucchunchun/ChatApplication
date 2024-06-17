@@ -5,10 +5,10 @@ namespace App\Console\Commands\Develop;
 use Illuminate\Console\Command;
 use App\Utilities\DirectoryManipulator;
 
-class MakeEntity extends Command
+class MakeUseCase extends Command
 {
-    protected $signature = 'make:entity {name}';
-    protected $description = 'Create a new entity file';
+    protected $signature = 'make:usecase {name}';
+    protected $description = 'Create a new useCase file';
     protected $directoryManipulator;
 
     /**
@@ -30,12 +30,12 @@ class MakeEntity extends Command
      */
     public function handle()
     {
-        $name = $this->argument('name') . 'Entity';
+        $name = $this->argument('name') . 'UseCase';
 
         // Extract directory and file name
         $pathParts = explode('/', $name);
         $fileName = array_pop($pathParts);
-        $directory = app_path('Entities/' . implode('/', $pathParts));
+        $directory = app_path('UseCases/' . implode('/', $pathParts));
 
         $this->directoryManipulator->makeDirectory($directory);
 
@@ -46,11 +46,11 @@ class MakeEntity extends Command
             return 1;
         }
 
-        $stub = file_get_contents(__DIR__ . '/../../stubs/entity.stub');
+        $stub = file_get_contents(__DIR__ . '/../../stubs/usecase.stub');
 
         $this->directoryManipulator->putContentToFile($path, $this->replaceNamespace($stub, $fileName, implode('\\', $pathParts)));
 
-        $this->info("Entity {$name} created successfully.");
+        $this->info("UseCase {$name} created successfully.");
 
         return 0; 
     }
@@ -65,7 +65,7 @@ class MakeEntity extends Command
      */
     protected function replaceNamespace(&$stub, $fileName, $namespace)
     {
-        $stub = str_replace('{{ namespace }}', 'App\Entities' . ($namespace?'\\' . $namespace: ''), $stub);
+        $stub = str_replace('{{ namespace }}', 'App\UseCases' . ($namespace?'\\' . $namespace: ''), $stub);
         return str_replace('{{ class }}', $fileName, $stub);
     }
 

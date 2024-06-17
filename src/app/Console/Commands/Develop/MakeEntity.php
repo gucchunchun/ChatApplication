@@ -48,7 +48,7 @@ class MakeEntity extends Command
 
         $stub = file_get_contents(__DIR__ . '/../../stubs/entity.stub');
 
-        $this->directoryManipulator->putContentToFile($path, $this->replaceNamespace($stub, $name));
+        $this->directoryManipulator->putContentToFile($path, $this->replaceNamespace($stub, $fileName, implode('\\', $pathParts)));
 
         $this->info("Entity {$name} created successfully.");
 
@@ -63,10 +63,10 @@ class MakeEntity extends Command
      * @param  string  $name
      * @return string
      */
-    protected function replaceNamespace(&$stub, $name)
+    protected function replaceNamespace(&$stub, $fileName, $namespace)
     {
-        $stub = str_replace('{{ namespace }}', 'App\Entities', $stub);
-        return str_replace('{{ class }}', $name, $stub);
+        $stub = str_replace('{{ namespace }}', 'App\Entities' . ($namespace?'\\' . $namespace: ''), $stub);
+        return str_replace('{{ class }}', $fileName, $stub);
     }
 
 }

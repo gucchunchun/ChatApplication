@@ -2,9 +2,10 @@
 
 namespace App\Entities;
 
+use App\Entities\UpdatableEntityInterface;
 use App\Entities\ValueObject\ChannelName;
 
-class ChatRoomEntity
+class ChatRoomEntity implements UpdatableEntityInterface
 {
     const ID_RULES = ['exist:chat_rooms,id'];
     const NAME_RULES = ['min:1', 'max:24'];
@@ -35,6 +36,11 @@ class ChatRoomEntity
     {
         return $this->channelName;
     }
+    public function getUpdatableFields(): array
+    {
+        return self::UPDATABLES;
+    }
+
     public function update(array $data): void
     {
         foreach (self::UPDATABLES as $updatable)

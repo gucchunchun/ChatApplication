@@ -1,4 +1,5 @@
 <?php
+
 namespace App\Utilities;
 
 use Illuminate\Filesystem\Filesystem;
@@ -31,11 +32,17 @@ class DirectoryManipulator
     return true;
   }
 
-  public function putContentToFile($path, $content): bool
+  public function putContentToFile(string $path, string $content): bool
   {
     if (!$this->isExist($path)) return false;
     $this->files->put($path, $content);
     return true;
+  }
+
+  public function getFileContent(string $path): string|null
+  {
+    if (!$this->isExist($path)) return null;
+    return file_get_contents($path);
   }
 
   /**

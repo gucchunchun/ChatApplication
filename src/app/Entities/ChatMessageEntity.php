@@ -2,10 +2,11 @@
 
 namespace App\Entities;
 
+use App\Entities\EntityInterface;
 use App\Entities\ChatRoomEntity;
 use App\Entities\UserEntity;
 
-class ChatMessageEntity
+class ChatMessageEntity implements EntityInterface
 {
     const ID_RULES = ['exist:chat_messages,id'];
     const ROOM_ID_RULES = ['exist:chat_rooms,id'];

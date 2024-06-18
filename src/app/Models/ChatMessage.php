@@ -12,7 +12,7 @@ class ChatMessage extends Model
 
     protected $table = 'chat_messages';
     protected $primaryKey = 'id';
-    protected $incrementing = true;
+    public $incrementing = true;
     protected $keyType = 'int';
 
     protected $fillable = [

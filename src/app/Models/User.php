@@ -9,6 +9,10 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Concerns\HasUuids;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use Illuminate\Database\Eloquent\Factories\Factory;
+
+use Database\Factories\UserFactory;
+use App\Enum\SNSProvider;
 
 class User extends Authenticatable
 {
@@ -16,7 +20,7 @@ class User extends Authenticatable
 
     protected $table = 'users';
     protected $primaryKey = 'id';
-    protected $incrementing = false;
+    public $incrementing = false;
     protected $keyType = 'string';
 
     /**
@@ -48,11 +52,14 @@ class User extends Authenticatable
      * @var array<string, string>
      */
     protected $casts = [
+        'password' => 'hashed',
+        'provider' => SNSProvider::class
     ];
 
-    // protected static function newFactory(): Factory
-    // {
-    // }
+    protected static function newFactory(): Factory
+    {
+        return UserFactory::new();
+    }
 
     // Relations
     public function userChatRooms(): HasMany

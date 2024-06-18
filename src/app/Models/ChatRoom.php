@@ -12,7 +12,7 @@ class ChatRoom extends Model
 
     protected $table = 'chat_rooms';
     protected $primaryKey = 'id';
-    protected $incrementing = true;
+    public $incrementing = true;
     protected $keyType = 'int';
 
     protected $fillable = [

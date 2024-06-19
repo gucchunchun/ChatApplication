@@ -49,7 +49,7 @@ class UserRepository implements UserRepositoryInterface
         'email' => $userEntity->getEmail(),
         'password' => $userEntity->getPassword(),
         'provider' => $userEntity->getProvider(),
-        'sns_id' => $userEntity->getsnsId(),
+        'sns_id' => $userEntity->getSNSId(),
       ]);
     }
     catch (\Exception $e)

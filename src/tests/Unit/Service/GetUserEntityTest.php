@@ -10,6 +10,7 @@ use App\Services\GetUserEntity\GetUserEntityService;
 use App\Repositories\User\UserRepositoryInterface;
 use App\Models\User;
 use App\Entities\UserEntity;
+use App\Entities\Factory\UserEntityFactory;
 
 class GetUserEntityTest extends TestCase
 {
@@ -39,9 +40,9 @@ class GetUserEntityTest extends TestCase
         ->once()
         ->andReturn($user);
 
-        $getUserEntityService = new GetUserEntityService($this->mockUserRepository);
+        $getUserEntityService = new GetUserEntityService(new UserEntityFactory, $this->mockUserRepository);
 
-        $userEntity = $getUserEntityService->get(self::ID);
+        $userEntity = $getUserEntityService->getById(self::ID);
 
         $this->assertInstanceOf(UserEntity::class, $userEntity);
         $this->assertEquals($userEntity->getId(), self::ID);

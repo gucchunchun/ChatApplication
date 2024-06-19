@@ -16,9 +16,15 @@ use App\Services\GetUserEntity\GetUserEntityService;
 use App\Services\SNSAuth\SNSConnectServiceInterface;
 use App\Services\SNSAuth\SNSConnectService;
 
-// Factory
+// USER
+// CreateUser
+use App\Services\User\CreateUser\CreateUserServiceInterface;
+use App\Services\User\CreateUser\CreateUserService;
+
+// BINDING
+// FACTORY
 use App\Entities\Factory\UserEntityFactory;
-// Repository
+// REPOSITORY
 use App\Repositories\User\UserRepositoryInterface;
 
 class AppServiceProvider extends ServiceProvider
@@ -48,6 +54,15 @@ class AppServiceProvider extends ServiceProvider
         $this->app->bind(SNSConnectServiceInterface::class, function ($app) {
             return new SNSConnectService(
                 $app->make(UserEntityFactory::class),
+            );
+        });
+
+        // USER
+        // CreateUser
+        $this->app->bind(CreateUserServiceInterface::class, function ($app) {
+            return new CreateUserService(
+                $app->make(UserEntityFactory::class),
+                $app->make(UserRepositoryInterface::class),
             );
         });
     }

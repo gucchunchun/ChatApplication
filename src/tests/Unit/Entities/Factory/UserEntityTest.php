@@ -75,7 +75,7 @@ class UserEntityTest extends TestCase
         $this->assertEquals(self::EMAIL, $userEntity->getEmail());
         $this->assertTrue(Hash::check(self::PASSWORD, $userEntity->getPassword()));
         $this->assertEquals(null, $userEntity->getProvider());
-        $this->assertEquals(null, $userEntity->getSnsId());
+        $this->assertEquals(null, $userEntity->getSNSId());
     }
     public function test_1_2(): void
     {
@@ -124,7 +124,7 @@ class UserEntityTest extends TestCase
         $this->assertEquals(self::EMAIL, $userEntity->getEmail());
         $this->assertEquals(null, $userEntity->getPassword());
         $this->assertEquals(self::PROVIDER->value, $userEntity->getProvider());
-        $this->assertEquals(self::SNS_ID, $userEntity->getSnsId());
+        $this->assertEquals(self::SNS_ID, $userEntity->getSNSId());
     }
     public function test_2_1(): void
     {
@@ -141,7 +141,7 @@ class UserEntityTest extends TestCase
         $this->assertEquals(self::EMAIL, $userEntity->getEmail());
         $this->assertEquals(self::PASSWORD, $userEntity->getPassword());
         $this->assertEquals(null, $userEntity->getProvider());
-        $this->assertEquals(null, $userEntity->getSnsId());
+        $this->assertEquals(null, $userEntity->getSNSId());
     }
     public function test_2_2(): void
     {
@@ -159,7 +159,7 @@ class UserEntityTest extends TestCase
         $this->assertEquals(self::EMAIL, $userEntity->getEmail());
         $this->assertEquals(null, $userEntity->getPassword());
         $this->assertEquals(self::PROVIDER->value, $userEntity->getProvider());
-        $this->assertEquals(self::SNS_ID, $userEntity->getSnsId());
+        $this->assertEquals(self::SNS_ID, $userEntity->getSNSId());
     }
     public function test_2_3(): void
     {
@@ -177,6 +177,6 @@ class UserEntityTest extends TestCase
         $this->assertEquals(self::EMAIL, $userEntity->getEmail());
         $this->assertEquals(null, $userEntity->getPassword());
         $this->assertEquals(self::PROVIDER->value, $userEntity->getProvider());
-        $this->assertEquals(self::SNS_ID, $userEntity->getSnsId());
+        $this->assertEquals(self::SNS_ID, $userEntity->getSNSId());
     }
 }

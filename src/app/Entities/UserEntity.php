@@ -57,7 +57,7 @@ class UserEntity implements UpdatableEntityInterface
     {
         return $this->provider;
     }
-    public function getsnsId(): ?string
+    public function getSNSId(): ?string
     {
         return $this->snsId;
     }
@@ -80,4 +80,19 @@ class UserEntity implements UpdatableEntityInterface
         return new ChatMessageEntity(
             null, new ChatRoomEntity($room_id, null), $this, $message);
     }
+    /**
+     * @return array エンティティのプロパティをキー、現時点での値をバリューとした配列を返す
+     */
+    public function getData(): array
+    {
+        return [
+            'id' => $this->id,
+            'name' => $this->name,
+            'email' => $this->email,
+            'password' => $this->password,
+            'provider' => $this->provider,
+            'snsId' => $this->snsId,
+        ];
+    }
+    
 }

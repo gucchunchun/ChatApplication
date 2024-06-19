@@ -5,6 +5,7 @@ namespace App\UseCases;
 use App\Entities\UserEntity;
 
 use App\Services\Auth\AuthServiceInterface;
+use Illuminate\Auth\AuthenticationException;
 
 class LoginUseCase
 {
@@ -21,10 +22,18 @@ class LoginUseCase
      */
     public function execute(array $credentials): UserEntity
     {
-        $credentials = array_filter($credentials, function ($key){
-            return in_array($key, self::CREDENTIALS);
-        }, ARRAY_FILTER_USE_KEY);
-
-        return $this->authService->authenticate($credentials);
+        try
+        {
+            $credentials = array_filter($credentials, function ($key){
+                return in_array($key, self::CREDENTIALS);
+            }, ARRAY_FILTER_USE_KEY);
+    
+            return $this->authService->authenticate($credentials);
+        }
+        catch (AuthenticationException $e)
+        {
+            // TODO: ERROR MESSAGE CONFIG FILE作成
+            throw new AuthenticationException();
+        }
     }
 }

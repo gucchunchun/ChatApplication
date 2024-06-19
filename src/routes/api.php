@@ -4,6 +4,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\SNSLoginController;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,3 +18,4 @@ use App\Http\Controllers\LoginController;
 */
 
 Route::post('/login', LoginController::class);
+Route::post('/login/github', [SNSLoginController::class, 'gitHub']);

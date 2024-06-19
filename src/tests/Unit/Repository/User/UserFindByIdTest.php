@@ -5,7 +5,6 @@ namespace Tests\Unit\Repository\User;
 use Tests\TestCase;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Support\Facades\Hash;
-use Illuminate\Database\Eloquent\ModelNotFoundException;
 
 use App\Repositories\User\UserRepository;
 use App\Models\User;
@@ -29,7 +28,7 @@ class UserFindByIdTest extends TestCase
         $this->userGit = User::factory()->create([
             'password' => null,
             'provider' => SNSProvider::GIT_HUB->value,
-            'sns_token' => 'token'
+            'sns_id' => 'token'
         ]);
     }
 
@@ -49,12 +48,12 @@ class UserFindByIdTest extends TestCase
         $this->assertEquals($this->userGit->email, $user->email);
         $this->assertEquals(null, $user->password);
         $this->assertEquals($this->userGit->provider, $user->provider);
-        $this->assertEquals($this->userGit->sns_token, $user->sns_token);
+        $this->assertEquals($this->userGit->sns_id, $user->sns_id);
     }
     public function test_3_1(): void
     {
-        $this->expectException(ModelNotFoundException::class);
+        $user = $this->userRepository->findById(1);
 
-        $this->userRepository->findById(1);
+        $this->assertEquals(null, $user);
     }
 }

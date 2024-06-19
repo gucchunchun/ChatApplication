@@ -18,20 +18,27 @@ class UserRepository implements UserRepositoryInterface
     {
         $this->modelClass = $userModelClass;
   }
-  public function findById(string|int $id): User
+  public function findById(string|int $id): ?User
     {
       try
       {
-        return $this->modelClass->findOrFail($id);
-      }
-      catch (ModelNotFoundException $e)
-      {
-        throw new ModelNotFoundException($e->getMessage());
+        return $this->modelClass->find($id);
       }
       catch (\Exception $e)
       {
         throw new HttpException(500, $e->getMessage());
       }
+  }
+  public function findBySNS(string $provider, string $snsId): ?User
+  {
+    try
+    {
+      return $this->modelClass->where('provider', $provider)->where('sns_id', $snsId)->first();
+    }
+    catch (\Exception $e)
+    {
+      throw new HttpException(500, $e->getMessage());
+    }
   }
   public function save(UserEntity $userEntity): User
   {
@@ -42,7 +49,7 @@ class UserRepository implements UserRepositoryInterface
         'email' => $userEntity->getEmail(),
         'password' => $userEntity->getPassword(),
         'provider' => $userEntity->getProvider(),
-        'sns_token' => $userEntity->getSnsToken(),
+        'sns_id' => $userEntity->getsnsId(),
       ]);
     }
     catch (\Exception $e)

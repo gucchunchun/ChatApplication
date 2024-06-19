@@ -43,7 +43,7 @@ class UserSaveTest extends TestCase
             'name' => $userEntity->getName(),
             'email' => $userEntity->getEmail(),
             'provider' => $userEntity->getProvider(),
-            'sns_token' => $userEntity->getSnsToken(),
+            'sns_id' => $userEntity->getsnsId(),
         ]);
     }
 }

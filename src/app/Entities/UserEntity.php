@@ -15,18 +15,18 @@ class UserEntity implements UpdatableEntityInterface
     const EMAIL_RULES = ['email:strict'];
     const PASSWORD_RULES = ['min:10', 'max:32'];
     const UPDATABLES = [
-        'name', 'snsToken'
+        'name', 'snsId'
     ];
 
     private ?string $id;
-    private string $name;
+    private ?string $name;    
     private string $email;
     private ?string $password;
     private ?string $provider;
-    private ?string $snsToken;
+    private ?string $snsId;
 
     public function __construct(
-        ?string $id, string $name, string $email, ?string $password, ?SNSProvider $provider = null, ?string $snsToken = null
+        ?string $id, ?string $name, string $email, ?string $password, ?SNSProvider $provider = null, ?string $snsId = null
     )
     {
         $this->id = $id;
@@ -34,14 +34,14 @@ class UserEntity implements UpdatableEntityInterface
         $this->email = $email;
         $this->password = $password;
         $this->provider = $provider?$provider->value: $provider;
-        $this->snsToken = $snsToken;
+        $this->snsId = $snsId;
     }
 
     public function getId(): ?string
     {
         return $this->id;
     }
-    public function getName(): string
+    public function getName(): ?string
     {
         return $this->name;
     }
@@ -57,9 +57,9 @@ class UserEntity implements UpdatableEntityInterface
     {
         return $this->provider;
     }
-    public function getSnsToken(): ?string
+    public function getsnsId(): ?string
     {
-        return $this->snsToken;
+        return $this->snsId;
     }
     public function getUpdatableFields(): array
     {

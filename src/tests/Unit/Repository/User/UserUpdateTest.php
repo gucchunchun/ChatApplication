@@ -20,7 +20,7 @@ class UserUpdateTest extends TestCase
     const EMAIL = 'updated@example.com';
     const PASSWORD = 'updated_password';
     const PROVIDER = 'updated_provider';
-    const SNS_TOKEN = 'updated_token';
+    const sns_id = 'updated_token';
 
     private $userRepository;
     private $userPass;
@@ -37,7 +37,7 @@ class UserUpdateTest extends TestCase
         $this->userGit = User::factory()->create([
             'password' => null,
             'provider' => SNSProvider::GIT_HUB->value,
-            'sns_token' => 'token'
+            'sns_id' => 'token'
         ]);
 
         $this->userPassEntity = new UserEntity(
@@ -52,7 +52,7 @@ class UserUpdateTest extends TestCase
             $this->userGit->email,
             $this->userGit->password,
             $this->userGit->provider,
-            $this->userGit->sns_token,
+            $this->userGit->sns_id,
         );
     }
 
@@ -70,7 +70,7 @@ class UserUpdateTest extends TestCase
             'email' => $this->userPass->email,
             'password' => $this->userPass->password,
             'provider' => $this->userPass->provider,
-            'sns_token' => $this->userPass->sns_token,
+            'sns_id' => $this->userPass->sns_id,
         ]);
     }
     public function test_1_2(): void
@@ -87,7 +87,7 @@ class UserUpdateTest extends TestCase
             'email' => $this->userPass->email,
             'password' => $this->userPass->password,
             'provider' => $this->userPass->provider,
-            'sns_token' => $this->userPass->sns_token,
+            'sns_id' => $this->userPass->sns_id,
         ]);
     }
     public function test_1_3(): void
@@ -104,7 +104,7 @@ class UserUpdateTest extends TestCase
             'email' => $this->userPass->email,
             'password' => $this->userPass->password,
             'provider' => $this->userPass->provider,
-            'sns_token' => $this->userPass->sns_token,
+            'sns_id' => $this->userPass->sns_id,
         ]);
     }
     public function test_1_4(): void
@@ -121,7 +121,7 @@ class UserUpdateTest extends TestCase
             'email' => $this->userPass->email,
             'password' => $this->userPass->password,
             'provider' => $this->userPass->provider,
-            'sns_token' => $this->userPass->sns_token,
+            'sns_id' => $this->userPass->sns_id,
         ]);
     }
     public function test_1_5(): void
@@ -138,13 +138,13 @@ class UserUpdateTest extends TestCase
             'email' => $this->userPass->email,
             'password' => $this->userPass->password,
             'provider' => $this->userPass->provider,
-            'sns_token' => $this->userPass->sns_token,
+            'sns_id' => $this->userPass->sns_id,
         ]);
     }
     public function test_1_6(): void
     { 
         $this->userPassEntity->update([
-            'snsToken' => self::SNS_TOKEN
+            'snsId' => self::sns_id
         ]);
 
         $this->userRepository->update($this->userPassEntity);
@@ -155,7 +155,7 @@ class UserUpdateTest extends TestCase
             'email' => $this->userPass->email,
             'password' => $this->userPass->password,
             'provider' => $this->userPass->provider,
-            'sns_token' => self::SNS_TOKEN
+            'sns_id' => self::sns_id
         ]);
     }
     public function test_2_1(): void
@@ -172,7 +172,7 @@ class UserUpdateTest extends TestCase
             'email' => $this->userGit->email,
             'password' => $this->userGit->password,
             'provider' => $this->userGit->provider,
-            'sns_token' => $this->userGit->sns_token,
+            'sns_id' => $this->userGit->sns_id,
         ]);
     }
     public function test_2_2(): void
@@ -189,7 +189,7 @@ class UserUpdateTest extends TestCase
             'email' => $this->userGit->email,
             'password' => $this->userGit->password,
             'provider' => $this->userGit->provider,
-            'sns_token' => $this->userGit->sns_token,
+            'sns_id' => $this->userGit->sns_id,
         ]);
     }
     public function test_2_3(): void
@@ -206,7 +206,7 @@ class UserUpdateTest extends TestCase
             'email' => $this->userGit->email,
             'password' => $this->userGit->password,
             'provider' => $this->userGit->provider,
-            'sns_token' => $this->userGit->sns_token,
+            'sns_id' => $this->userGit->sns_id,
         ]);
     }
     public function test_2_4(): void
@@ -223,7 +223,7 @@ class UserUpdateTest extends TestCase
             'email' => $this->userGit->email,
             'password' => $this->userGit->password,
             'provider' => $this->userGit->provider,
-            'sns_token' => $this->userGit->sns_token,
+            'sns_id' => $this->userGit->sns_id,
         ]);
     }
     public function test_2_5(): void
@@ -240,13 +240,13 @@ class UserUpdateTest extends TestCase
             'email' => $this->userGit->email,
             'password' => $this->userGit->password,
             'provider' => $this->userGit->provider,
-            'sns_token' => $this->userGit->sns_token,
+            'sns_id' => $this->userGit->sns_id,
         ]);
     }
     public function test_2_6(): void
     { 
         $this->userGitEntity->update([
-            'snsToken' => self::SNS_TOKEN
+            'snsId' => self::sns_id
         ]);
 
         $this->userRepository->update($this->userGitEntity);
@@ -257,7 +257,7 @@ class UserUpdateTest extends TestCase
             'email' => $this->userGit->email,
             'password' => $this->userGit->password,
             'provider' => $this->userGit->provider,
-            'sns_token' => self::SNS_TOKEN
+            'sns_id' => self::sns_id
         ]);
     }
     public function test_3_1(): void
@@ -268,7 +268,7 @@ class UserUpdateTest extends TestCase
             'email' => self::EMAIL,
             'password' => self::PASSWORD,
             'provider' => self::PROVIDER,
-            'snsToken' => self::SNS_TOKEN
+            'snsId' => self::sns_id
         ]);
 
         $this->userRepository->update($this->userGitEntity);
@@ -279,7 +279,7 @@ class UserUpdateTest extends TestCase
             'email' => $this->userGit->email,
             'password' => $this->userGit->password,
             'provider' => $this->userGit->provider,
-            'sns_token' => self::SNS_TOKEN
+            'sns_id' => self::sns_id
         ]);
     }
     public function test_4_1(): void

@@ -19,7 +19,7 @@ return new class extends Migration
             $table->string('email')->unique();
             $table->string('password')->nullable();
             $table->enum('provider', array_column(SNSProvider::cases(), 'value'))->nullable();
-            $table->string('sns_token')->nullable();
+            $table->string('sns_id')->nullable();
             $table->rememberToken();
             $table->dateTime('created_at');
             $table->dateTime('updated_at');

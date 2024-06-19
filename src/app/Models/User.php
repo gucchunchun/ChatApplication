@@ -33,7 +33,7 @@ class User extends Authenticatable
         'email',
         'password',
         'provider',
-        'sns_token',
+        'sns_id',
         'created_at',
     ];
 

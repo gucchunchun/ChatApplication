@@ -1,14 +1,17 @@
 <?php
 
-namespace App\Services\GetUserEntity;
+namespace App\Services\Auth;
 
-use App\Services\GetUserEntity\GetUserEntityServiceInterface;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Auth\AuthenticationException;
+
+use App\Services\Auth\AuthServiceInterface;
 use App\Entities\Factory\UserEntityFactory;
 use App\Repositories\User\UserRepositoryInterface;
 use App\Entities\UserEntity;
 use App\Enum\SNSProvider;
 
-class GetUserEntityService implements GetUserEntityServiceInterface
+class AuthService implements AuthServiceInterface
 {
     private $userEntityFactory;
     private $userRepository;
@@ -18,19 +21,27 @@ class GetUserEntityService implements GetUserEntityServiceInterface
         $this->userRepository = $userRepository;
     }
 
-    public function getById(string $userId): ?UserEntity
+    public function authenticate(array $credentials): UserEntity
     {
-        $user = $this->userRepository->findById($userId);
+        if (!Auth::attempt($credentials) ) 
+        {
+            throw new AuthenticationException();
+        }
 
-        if (!$user) return null;
+        $user = Auth::user();
 
         return $this->userEntityFactory->createByModel($user);
-    }
-    public function getBySNS(SNSProvider $provider, string $snsId): ?UserEntity
+    }   
+
+    public function authenticateWithSNS(SNSProvider $provider, string $snsId): UserEntity
     {
         $user = $this->userRepository->findBySNS($provider->value, $snsId);
 
-        if (!$user) return null;
+        if (!$user) {
+            throw new AuthenticationException();
+        }
+        
+        Auth::login($user);
 
         return $this->userEntityFactory->createByModel($user);
     }

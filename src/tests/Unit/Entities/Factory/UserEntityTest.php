@@ -148,7 +148,6 @@ class UserEntityTest extends TestCase
         $userData = [
             'name' => self::NAME,
             'email' => self::EMAIL,
-            'password' => null,
             'provider' => self::PROVIDER,
             'snsId' => self::SNS_ID,
         ];
@@ -157,6 +156,24 @@ class UserEntityTest extends TestCase
 
         $this->assertEquals(null, $userEntity->getId());
         $this->assertEquals(self::NAME, $userEntity->getName());
+        $this->assertEquals(self::EMAIL, $userEntity->getEmail());
+        $this->assertEquals(null, $userEntity->getPassword());
+        $this->assertEquals(self::PROVIDER->value, $userEntity->getProvider());
+        $this->assertEquals(self::SNS_ID, $userEntity->getSnsId());
+    }
+    public function test_2_3(): void
+    {
+        $userData = [
+            'name' => null,
+            'email' => self::EMAIL,
+            'provider' => self::PROVIDER,
+            'snsId' => self::SNS_ID,
+        ];
+
+        $userEntity = $this->userEntityFactory->createByData($userData);
+
+        $this->assertEquals(null, $userEntity->getId());
+        $this->assertEquals(null, $userEntity->getName());
         $this->assertEquals(self::EMAIL, $userEntity->getEmail());
         $this->assertEquals(null, $userEntity->getPassword());
         $this->assertEquals(self::PROVIDER->value, $userEntity->getProvider());

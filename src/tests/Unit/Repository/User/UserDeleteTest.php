@@ -28,7 +28,7 @@ class UserDeleteTest extends TestCase
         $this->userGit = User::factory()->create([
             'password' => null,
             'provider' => SNSProvider::GIT_HUB->value,
-            'sns_token' => 'token'
+            'sns_id' => 'token'
         ]);
     }
 

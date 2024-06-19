@@ -20,10 +20,10 @@ class Controller extends BaseController
             $contents['data'] = $data;
         }
 
-        return response()->json([
-            $contents,
+        return response()->json(
+            $contents, 
             $status,
             $header
-        ]);
+        );
     }
 }

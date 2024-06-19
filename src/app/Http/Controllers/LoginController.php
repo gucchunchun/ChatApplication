@@ -20,9 +20,10 @@ class LoginController extends Controller
     {
         $userEntity = $this->loginUseCase->execute($request->validated());
 
+        // TODO: メッセージconfigに移動
         return $this->createResponse(
-            'Successfully logged in',
-            (new UserResource($userEntity))->toArray($request)
+            config('response.success.login'),
+            (new UserResource($userEntity))->resolve()
         );
     }
 }

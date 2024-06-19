@@ -59,8 +59,8 @@ class LoginTest extends TestCase
 
         $this->assertEquals(200, $response->getStatusCode());
 
-        $responseData = json_decode($response->getContent(), true)[0];
-        $this->assertEquals('Successfully logged in', $responseData['message']);
+        $responseData = json_decode($response->getContent(), true);
+        $this->assertEquals(config('response.success.login'), $responseData['message']);
         $this->assertArrayHasKey('data', $responseData);
         $this->assertEquals(self::ID, $responseData['data']['id']);
         $this->assertEquals(self::NAME, $responseData['data']['name']);

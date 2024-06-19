@@ -26,6 +26,9 @@ class SNSLoginUseCase
         $this->SNSConnectService = $SNSConnectService;
     }
 
+    /**
+     * @return array ['new' => Is User New, 'user' => UserEntity]
+     */
     public function gitHub(): array
     {
         try

@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Http\JsonResponse;
 
 use App\UseCases\SNSLoginUseCase;
-use App\Http\Resources\Login\UserResource;
+use App\Http\Resources\Auth\UserResource;
 
 class SNSLoginController extends Controller
 {

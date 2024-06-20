@@ -4,8 +4,7 @@ namespace App\Entities\ValueObject;
 
 class ChannelName
 {
-    const REPLACEMENT = '{}';
-    const TEMPLATE = 'chat_room_' . self::REPLACEMENT;
+    const TEMPLATE = 'chat_room_';
     private int $chatRoomId;
 
     public function __construct(int $chatRoomId = null)
@@ -15,6 +14,6 @@ class ChannelName
 
     public function getName(): string
     {
-       return str_replace(self::REPLACEMENT, $this->chatRoomId, self::TEMPLATE);
+        return self::TEMPLATE . $this->chatRoomId;
     }
 }

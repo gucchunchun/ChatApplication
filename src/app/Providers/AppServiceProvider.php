@@ -20,6 +20,11 @@ use App\Services\GetUserEntity\GetUserEntityService;
 use App\Services\SNSAuth\SNSConnectServiceInterface;
 use App\Services\SNSAuth\SNSConnectService;
 
+// CHAT MESSAGE
+// Create
+use App\Services\ChatMessage\CreateChatMessage\CreateChatMessageServiceInterface;
+use App\Services\ChatMessage\CreateChatMessage\CreateChatMessageService;
+
 // USER
 // CreateUser
 use App\Services\User\CreateUser\CreateUserServiceInterface;
@@ -27,8 +32,10 @@ use App\Services\User\CreateUser\CreateUserService;
 
 // BINDING
 // FACTORY
+use App\Entities\Factory\ChatMessageEntityFactory;
 use App\Entities\Factory\UserEntityFactory;
 // REPOSITORY
+use App\Repositories\ChatMessage\ChatMessageRepositoryInterface;
 use App\Repositories\User\UserRepositoryInterface;
 
 class AppServiceProvider extends ServiceProvider
@@ -65,6 +72,14 @@ class AppServiceProvider extends ServiceProvider
         $this->app->bind(SNSConnectServiceInterface::class, function ($app) {
             return new SNSConnectService(
                 $app->make(UserEntityFactory::class),
+            );
+        });
+
+        // CHAT MESSAGE
+        $this->app->bind(CreateChatMessageServiceInterface::class, function ($app) {
+            return new CreateChatMessageService(
+                $app->make(ChatMessageEntityFactory::class),
+                $app->make(ChatMessageRepositoryInterface::class),
             );
         });
 

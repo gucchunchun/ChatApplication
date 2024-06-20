@@ -20,6 +20,7 @@ class CreateChatMessageService
     {
         $chatMessage = $this->chatMessageRepository->save($chatMessageEntity);
             
-        return $this->chatMessageEntityFactory->createByModel($chatMessage, $chatMessageEntity->getRoom(), $chatMessageEntity->getSender());
+        // User情報は揃っているが、ChatRoomに関してはIDのみでルーム名がわからないためnullにしてFactoryないでリレーションからデータゲットを行う
+        return $this->chatMessageEntityFactory->createByModel($chatMessage, null, $chatMessageEntity->getSender());
     }
 }

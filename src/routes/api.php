@@ -19,6 +19,7 @@ use App\Http\Controllers\SNSLoginController;
 */
 
 Route::post('/login', LoginController::class);
-Route::post('/login/github', [SNSLoginController::class, 'gitHub']);
+Route::get('/login/git-hub', [SNSLoginController::class, 'getGitHubRedirectUrl']);
+Route::post('/login/git-hub', [SNSLoginController::class, 'gitHub']);
 
 Route::post('/register', RegisterController::class);

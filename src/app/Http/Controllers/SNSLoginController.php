@@ -16,6 +16,16 @@ class SNSLoginController extends Controller
         $this->snsLoginUseCase = $snsLoginUseCase;
     }
 
+    public function getGitHubRedirectUrl(): JsonResponse
+    {
+        $url = $this->snsLoginUseCase->getGitHubRedirectUrl();
+
+        return $this->createResponse(
+            config('response.success.redirect'),
+            ['url' => $url],
+        );
+    }
+
     public function gitHub(): JsonResponse
     {
         $result = $this->snsLoginUseCase->gitHub();

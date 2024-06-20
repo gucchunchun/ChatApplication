@@ -23,7 +23,7 @@ class SendMessageUseCase
         // ユーザーの特定
         $userEntity = $this->getAuthenticatedUserEntityService->get();
 
-        // Roomにユーザーが登録されているか確認
+        // TODO: Roomにユーザーが登録されているか確認
 
         // データ登録用のChatMessageEntityの作成
         $creatingChatMessageEntity = $userEntity->createMessage($roomId, $message);

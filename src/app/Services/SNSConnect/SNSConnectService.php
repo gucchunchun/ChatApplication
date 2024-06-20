@@ -29,8 +29,8 @@ class SNSConnectService
 
         return $this->userEntityFactory->createByData($userData);
     }
-    public function redirectToSNS(SNSProvider $provider): RedirectResponse
+    public function getRedirectUrl(SNSProvider $provider): string
     {
-        return Socialite::driver($provider->value)->redirect();
+        return Socialite::driver($provider->value)->redirect()->getTargetUrl();
     }
 }

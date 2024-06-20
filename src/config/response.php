@@ -3,7 +3,8 @@
 return [
   'success' => [
     'login' => 'LoggedIn',
-    'register' => 'Registered'
+    'register' => 'Registered',
+    'redirect' => 'RequireRedirect'
   ],
   'error' => [
     'login' => 'WrongCredentials',

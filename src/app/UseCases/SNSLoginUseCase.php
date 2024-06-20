@@ -45,6 +45,10 @@ class SNSLoginUseCase
             return $this->registeredAs($this->createUserService->create($tempUserEntity));
         }
     }
+    public function getGitHubRedirectUrl(): string
+    {
+        return $this->SNSConnectService->getRedirectUrl(SNSProvider::GIT_HUB);
+    }
 
     private function loggedInAs(UserEntity $userEntity): array
     {

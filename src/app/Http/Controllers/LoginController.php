@@ -6,7 +6,7 @@ use Illuminate\Http\JsonResponse;
 
 use App\UseCases\LoginUseCase;
 use App\Http\Requests\Login\LoginRequest;
-use App\Http\Resources\Login\UserResource;
+use App\Http\Resources\Auth\UserResource;
 
 class LoginController extends Controller
 {

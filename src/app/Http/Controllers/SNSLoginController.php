@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Http\JsonResponse;
 
 use App\UseCases\SNSLoginUseCase;
-use App\Http\Resources\Login\UserResource;
+use App\Http\Resources\Auth\UserResource;
 
 class SNSLoginController extends Controller
 {
@@ -14,6 +14,16 @@ class SNSLoginController extends Controller
     public function __construct(SNSLoginUseCase $snsLoginUseCase)
     {
         $this->snsLoginUseCase = $snsLoginUseCase;
+    }
+
+    public function getGitHubRedirectUrl(): JsonResponse
+    {
+        $url = $this->snsLoginUseCase->getGitHubRedirectUrl();
+
+        return $this->createResponse(
+            config('response.success.redirect'),
+            ['url' => $url],
+        );
     }
 
     public function gitHub(): JsonResponse

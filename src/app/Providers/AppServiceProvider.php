@@ -8,6 +8,10 @@ use Illuminate\Support\ServiceProvider;
 use App\Services\Auth\AuthServiceInterface;
 use App\Services\Auth\AuthService;
 
+// GetAuthenticatedUserEntity
+use App\Services\GetAuthenticatedUserEntity\GetAuthenticatedUserEntityServiceInterface;
+use App\Services\GetAuthenticatedUserEntity\GetAuthenticatedUserEntityService;
+
 // GetUserEntity
 use App\Services\GetUserEntity\GetUserEntityServiceInterface;
 use App\Services\GetUserEntity\GetUserEntityService;
@@ -39,6 +43,13 @@ class AppServiceProvider extends ServiceProvider
             return new AuthService(
                 $app->make(UserEntityFactory::class),
                 $app->make(UserRepositoryInterface::class),
+            );
+        });
+
+        // GetAuthenticatedUserEntity
+        $this->app->bind(GetAuthenticatedUserEntityServiceInterface::class, function ($app) {
+            return new GetAuthenticatedUserEntityService(
+                $app->make(UserEntityFactory::class),
             );
         });
 

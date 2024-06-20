@@ -17,13 +17,15 @@ class ChatMessageEntity implements EntityInterface
     private ChatRoomEntity $room;
     private UserEntity $sender;
     private string $message;
+    private string $createdAt;
 
-    public function __construct(?int $id, ChatRoomEntity $room, UserEntity $sender, string $message)
+    public function __construct(?int $id, ChatRoomEntity $room, UserEntity $sender, string $message, string $createdAt = null)
     {
         $this->id = $id;
         $this->room = $room;
         $this->sender = $sender;
         $this->message = $message;
+        $this->createdAt = $this->formatDate($createdAt);
     }
 
     public function getId(): ?int
@@ -34,12 +36,21 @@ class ChatMessageEntity implements EntityInterface
     {
         return $this->room;
     }
-    public function getUser(): UserEntity
+    public function getSender(): UserEntity
     {
         return $this->sender;
     }
     public function getMessage(): string
     {
         return $this->message;
+    }
+    public function getCreatedAt(): string
+    {
+        return $this->createdAt;
+    }
+
+    private function formatDate(string $datetime): string 
+    {
+        return (new \DateTime($datetime))->format('Y-m-d H:i:s');
     }
 }

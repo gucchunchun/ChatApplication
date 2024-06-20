@@ -5,6 +5,9 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Factories\Factory;
+
+use Database\Factories\ChatMessageFactory;
 
 class ChatMessage extends Model
 {
@@ -21,6 +24,11 @@ class ChatMessage extends Model
         'message',
         'created_at',
     ];
+
+    protected static function newFactory(): Factory
+    {
+        return ChatMessageFactory::new();
+    }
 
     // Relations
     public function chatRoom(): BelongsTo

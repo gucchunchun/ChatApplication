@@ -10,6 +10,7 @@ use App\Entities\Factory\UserEntityFactory;
 use App\Models\User;
 use App\Entities\UserEntity;
 use App\Enum\SNSProvider;
+use App\DTO\UserData;
 
 class UserEntityTest extends TestCase
 { 
@@ -128,11 +129,14 @@ class UserEntityTest extends TestCase
     }
     public function test_2_1(): void
     {
-        $userData = [
-            'name' => self::NAME,
-            'email' => self::EMAIL,
-            'password' => self::PASSWORD,
-        ];
+        $userData = new UserData(
+            null, 
+            self::NAME,
+            self::EMAIL,
+            self::PASSWORD,
+            null,
+            null
+        );
 
         $userEntity = $this->userEntityFactory->createByData($userData);
 
@@ -145,12 +149,14 @@ class UserEntityTest extends TestCase
     }
     public function test_2_2(): void
     {
-        $userData = [
-            'name' => self::NAME,
-            'email' => self::EMAIL,
-            'provider' => self::PROVIDER,
-            'snsId' => self::SNS_ID,
-        ];
+        $userData = new UserData(
+            null, 
+            self::NAME,
+            self::EMAIL,
+            null,
+            self::PROVIDER,
+            self::SNS_ID,
+        );
 
         $userEntity = $this->userEntityFactory->createByData($userData);
 
@@ -163,12 +169,14 @@ class UserEntityTest extends TestCase
     }
     public function test_2_3(): void
     {
-        $userData = [
-            'name' => null,
-            'email' => self::EMAIL,
-            'provider' => self::PROVIDER,
-            'snsId' => self::SNS_ID,
-        ];
+        $userData = new UserData(
+            null, 
+            self::NAME,
+            self::EMAIL,
+            null,
+            self::PROVIDER,
+            self::SNS_ID,
+        );
 
         $userEntity = $this->userEntityFactory->createByData($userData);
 

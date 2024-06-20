@@ -4,10 +4,11 @@ namespace App\Entities\Factory;
 
 use App\Models\User;
 use App\Entities\UserEntity;
+use App\DTO\UserData;
 
 class UserEntityFactory
 {
-  public function createByModel(User $user)
+  public function createByModel(User $user): UserEntity
   {
     return new UserEntity(
       $user->id,
@@ -18,15 +19,15 @@ class UserEntityFactory
       $user->sns_id
     );
   }
-  public function createByData(array $userData)
+  public function createByData(UserData $userData): UserEntity
   {
     return new UserEntity(
-      $userData['id']?? null,
-      $userData['name']?? null,
-      $userData['email'],
-      $userData['password']??null,
-      $userData['provider']??null,
-      $userData['snsId']??null
+      $userData->getId(),
+      $userData->getName(),
+      $userData->getEmail(),
+      $userData->getPassword(),
+      $userData->getProvider(),
+      $userData->getSNSId(),
     );
   }
 }

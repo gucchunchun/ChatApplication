@@ -5,6 +5,7 @@ namespace App\UseCases;
 use App\Services\User\CreateUser\CreateUserServiceInterface;
 use App\Entities\Factory\UserEntityFactory;
 use App\Entities\UserEntity;
+use App\DTO\UserData;
 
 class RegisterUseCase
 {
@@ -19,7 +20,15 @@ class RegisterUseCase
 
     public function execute(array $data): UserEntity
     {
-        $userEntity = $this->userEntityFactory->createByData($data);
+        $userData = new UserData(
+            null,
+            $data['name'],
+            $data['email'],
+            $data['password'],
+            null,
+            null
+        );
+        $userEntity = $this->userEntityFactory->createByData($userData);
 
         return $this->createUserService->create($userEntity);
     }

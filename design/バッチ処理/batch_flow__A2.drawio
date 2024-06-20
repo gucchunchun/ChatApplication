@@ -1,0 +1,76 @@
+<mxfile host="Electron" modified="2024-06-15T16:38:09.911Z" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/24.4.13 Chrome/124.0.6367.207 Electron/30.0.6 Safari/537.36" etag="KadZnd-fXEeKUlucPjd7" version="24.4.13" type="device">
+  <diagram name="Page-1" id="qpyZNt6tmqi5zsSmggbQ">
+    <mxGraphModel dx="1193" dy="909" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="kUFAmn0Hv5uW0ZGURFHb-23" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="kUFAmn0Hv5uW0ZGURFHb-2">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="200" y="90" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="kUFAmn0Hv5uW0ZGURFHb-2" value="開始" style="strokeWidth=2;html=1;shape=mxgraph.flowchart.start_1;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="150" y="10" width="100" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="kUFAmn0Hv5uW0ZGURFHb-3" value="終了" style="strokeWidth=2;html=1;shape=mxgraph.flowchart.terminator;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="150" y="710" width="100" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="kUFAmn0Hv5uW0ZGURFHb-29" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="kUFAmn0Hv5uW0ZGURFHb-11" target="kUFAmn0Hv5uW0ZGURFHb-12">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="kUFAmn0Hv5uW0ZGURFHb-31" value="YES" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="kUFAmn0Hv5uW0ZGURFHb-29">
+          <mxGeometry x="-0.6082" y="-3" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="kUFAmn0Hv5uW0ZGURFHb-32" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="1" source="kUFAmn0Hv5uW0ZGURFHb-11" target="kUFAmn0Hv5uW0ZGURFHb-3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="kUFAmn0Hv5uW0ZGURFHb-33" value="NO" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="kUFAmn0Hv5uW0ZGURFHb-32">
+          <mxGeometry x="0.0033" y="-1" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="kUFAmn0Hv5uW0ZGURFHb-11" value="エラー？" style="strokeWidth=2;html=1;shape=mxgraph.flowchart.decision;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="150" y="480" width="100" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="kUFAmn0Hv5uW0ZGURFHb-34" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="kUFAmn0Hv5uW0ZGURFHb-12" target="kUFAmn0Hv5uW0ZGURFHb-13">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="kUFAmn0Hv5uW0ZGURFHb-12" value="ログに記録" style="rounded=1;whiteSpace=wrap;html=1;absoluteArcSize=1;arcSize=14;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="320" y="560" width="100" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="kUFAmn0Hv5uW0ZGURFHb-13" value="Slack通知" style="rounded=1;whiteSpace=wrap;html=1;absoluteArcSize=1;arcSize=14;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="320" y="690" width="100" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="kUFAmn0Hv5uW0ZGURFHb-35" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="kUFAmn0Hv5uW0ZGURFHb-13" target="kUFAmn0Hv5uW0ZGURFHb-3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="kUFAmn0Hv5uW0ZGURFHb-43" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="kUFAmn0Hv5uW0ZGURFHb-36" target="kUFAmn0Hv5uW0ZGURFHb-38">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="kUFAmn0Hv5uW0ZGURFHb-36" value="softDeletedテーブル" style="strokeWidth=2;html=1;shape=mxgraph.flowchart.loop_limit;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="150" y="90" width="100" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="kUFAmn0Hv5uW0ZGURFHb-37" value="sofeDeletedテーブル" style="strokeWidth=2;html=1;shape=mxgraph.flowchart.loop_limit;whiteSpace=wrap;direction=west;" vertex="1" parent="1">
+          <mxGeometry x="150" y="400" width="100" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="kUFAmn0Hv5uW0ZGURFHb-42" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="kUFAmn0Hv5uW0ZGURFHb-38" target="kUFAmn0Hv5uW0ZGURFHb-39">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="kUFAmn0Hv5uW0ZGURFHb-38" value="1週間以上前にsoftDeletedされたデータ取得" style="shape=parallelogram;html=1;strokeWidth=2;perimeter=parallelogramPerimeter;whiteSpace=wrap;rounded=1;arcSize=12;size=0.23;" vertex="1" parent="1">
+          <mxGeometry x="150" y="180" width="100" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="kUFAmn0Hv5uW0ZGURFHb-39" value="relationデータとともにデータの消去" style="rounded=1;whiteSpace=wrap;html=1;absoluteArcSize=1;arcSize=14;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="150" y="270" width="100" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="kUFAmn0Hv5uW0ZGURFHb-40" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="kUFAmn0Hv5uW0ZGURFHb-37" target="kUFAmn0Hv5uW0ZGURFHb-11">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="kUFAmn0Hv5uW0ZGURFHb-41" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="kUFAmn0Hv5uW0ZGURFHb-39" target="kUFAmn0Hv5uW0ZGURFHb-37">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

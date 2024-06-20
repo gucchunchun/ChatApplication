@@ -1,0 +1,86 @@
+<mxfile host="Electron" modified="2024-06-15T16:28:16.982Z" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/24.4.13 Chrome/124.0.6367.207 Electron/30.0.6 Safari/537.36" etag="djx8qQPigJ3eHrOYPppW" version="24.4.13" type="device">
+  <diagram name="Page-1" id="qpyZNt6tmqi5zsSmggbQ">
+    <mxGraphModel dx="1122" dy="855" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="kUFAmn0Hv5uW0ZGURFHb-23" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="kUFAmn0Hv5uW0ZGURFHb-2" target="kUFAmn0Hv5uW0ZGURFHb-4">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="kUFAmn0Hv5uW0ZGURFHb-2" value="開始" style="strokeWidth=2;html=1;shape=mxgraph.flowchart.start_1;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="150" y="10" width="100" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="kUFAmn0Hv5uW0ZGURFHb-3" value="終了" style="strokeWidth=2;html=1;shape=mxgraph.flowchart.terminator;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="150" y="1000" width="100" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="kUFAmn0Hv5uW0ZGURFHb-24" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="kUFAmn0Hv5uW0ZGURFHb-4" target="kUFAmn0Hv5uW0ZGURFHb-5">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="kUFAmn0Hv5uW0ZGURFHb-4" value="前日ログ" style="shape=parallelogram;html=1;strokeWidth=2;perimeter=parallelogramPerimeter;whiteSpace=wrap;rounded=1;arcSize=12;size=0.23;" vertex="1" parent="1">
+          <mxGeometry x="150" y="90" width="100" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="kUFAmn0Hv5uW0ZGURFHb-5" value="データ圧縮" style="rounded=1;whiteSpace=wrap;html=1;absoluteArcSize=1;arcSize=14;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="150" y="170" width="100" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="kUFAmn0Hv5uW0ZGURFHb-26" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="kUFAmn0Hv5uW0ZGURFHb-6" target="kUFAmn0Hv5uW0ZGURFHb-9">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="kUFAmn0Hv5uW0ZGURFHb-6" value="ストレージ保存" style="strokeWidth=2;html=1;shape=mxgraph.flowchart.merge_or_storage;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="150" y="290" width="100" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="kUFAmn0Hv5uW0ZGURFHb-8" value="期限切れアーカイブデータの消去" style="rounded=1;whiteSpace=wrap;html=1;absoluteArcSize=1;arcSize=14;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="150" y="600" width="100" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="kUFAmn0Hv5uW0ZGURFHb-27" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="kUFAmn0Hv5uW0ZGURFHb-9" target="kUFAmn0Hv5uW0ZGURFHb-10">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="kUFAmn0Hv5uW0ZGURFHb-9" value="ローカルストレージからログファイルの前日ログファイルの消去" style="rounded=1;whiteSpace=wrap;html=1;absoluteArcSize=1;arcSize=14;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="150" y="380" width="100" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="kUFAmn0Hv5uW0ZGURFHb-28" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="1" source="kUFAmn0Hv5uW0ZGURFHb-10" target="kUFAmn0Hv5uW0ZGURFHb-8">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="kUFAmn0Hv5uW0ZGURFHb-10" value="期限切れアーカイブデータのパスの取得" style="shape=parallelogram;html=1;strokeWidth=2;perimeter=parallelogramPerimeter;whiteSpace=wrap;rounded=1;arcSize=12;size=0.23;" vertex="1" parent="1">
+          <mxGeometry x="150" y="510" width="100" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="kUFAmn0Hv5uW0ZGURFHb-29" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="kUFAmn0Hv5uW0ZGURFHb-11" target="kUFAmn0Hv5uW0ZGURFHb-12">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="kUFAmn0Hv5uW0ZGURFHb-31" value="YES" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="kUFAmn0Hv5uW0ZGURFHb-29">
+          <mxGeometry x="-0.6082" y="-3" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="kUFAmn0Hv5uW0ZGURFHb-32" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="1" source="kUFAmn0Hv5uW0ZGURFHb-11" target="kUFAmn0Hv5uW0ZGURFHb-3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="kUFAmn0Hv5uW0ZGURFHb-33" value="NO" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="kUFAmn0Hv5uW0ZGURFHb-32">
+          <mxGeometry x="0.0033" y="-1" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="kUFAmn0Hv5uW0ZGURFHb-11" value="エラー？" style="strokeWidth=2;html=1;shape=mxgraph.flowchart.decision;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="150" y="720" width="100" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="kUFAmn0Hv5uW0ZGURFHb-34" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="kUFAmn0Hv5uW0ZGURFHb-12" target="kUFAmn0Hv5uW0ZGURFHb-13">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="kUFAmn0Hv5uW0ZGURFHb-12" value="ログに記録" style="rounded=1;whiteSpace=wrap;html=1;absoluteArcSize=1;arcSize=14;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="320" y="820" width="100" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="kUFAmn0Hv5uW0ZGURFHb-13" value="Slack通知" style="rounded=1;whiteSpace=wrap;html=1;absoluteArcSize=1;arcSize=14;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="320" y="980" width="100" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="kUFAmn0Hv5uW0ZGURFHb-19" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="kUFAmn0Hv5uW0ZGURFHb-8" target="kUFAmn0Hv5uW0ZGURFHb-11">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="kUFAmn0Hv5uW0ZGURFHb-25" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="kUFAmn0Hv5uW0ZGURFHb-5" target="kUFAmn0Hv5uW0ZGURFHb-6">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="kUFAmn0Hv5uW0ZGURFHb-35" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="kUFAmn0Hv5uW0ZGURFHb-13" target="kUFAmn0Hv5uW0ZGURFHb-3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

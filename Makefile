@@ -114,19 +114,16 @@ facade:
 	docker compose exec app php artisan make:facade ${NAME}Facade
 # service作成
 service:
-	docker compose exec app php artisan make:service ${NAME}Service
+	docker compose exec app php artisan make:service ${NAME}
 # repository作成
 repository:
-	docker compose exec app php artisan make:repository ${NAME}Repository
+	docker compose exec app php artisan make:repository ${NAME}
 # ruleの作成
 rule:
 	docker compose exec app php artisan make:rule ${NAME}
 # notificationの作成
 notification:
 	docker compose exec app php artisan make:notification ${NAME}Notification
-# interfaceの作成
-interface:
-	docker compose exec app php artisan make:interface ${NAME}Interface
 # exceptionの作成
 exception:
 	docker compose exec app php artisan make:exception ${NAME}Exception
@@ -162,3 +159,7 @@ policy-m:
 	docker compose exec app php artisan make:policy ${NAME}Policy --model=${NAME}
 command:
 	docker compose exec app php artisan make:command ${NAME}
+entity:
+	docker compose exec app php artisan make:entity ${NAME}
+usecase:
+	docker compose exec app php artisan make:usecase ${NAME}

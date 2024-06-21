@@ -24,8 +24,8 @@ class LoginRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'email' => array_merge(['required'], UserEntity::EMAIL_RULES),
-            'password' => array_merge(['required'], UserEntity::PASSWORD_RULES, ['confirmed'])
+            'email' => array_unshift(UserEntity::EMAIL_RULES, 'required'),
+            'password' => array_unshift(UserEntity::PASSWORD_RULES, 'required')
         ];
     }
 }

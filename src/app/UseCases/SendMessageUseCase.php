@@ -2,18 +2,26 @@
 
 namespace App\UseCases;
 
+use App\Services\ChatRoomMembership\ChatRoomMembershipServiceInterface;
 use App\Services\ChatMessage\CreateChatMessage\CreateChatMessageServiceInterface;
 use App\Services\GetAuthenticatedUserEntity\GetAuthenticatedUserEntityServiceInterface;
+use Illuminate\Auth\Access\AuthorizationException;
 use App\Entities\ChatMessageEntity;
 use App\Events\MessageSent;
 
 class SendMessageUseCase
 {
+    private $chatRoomMembershipService;
     private $createChatMessageService;
     private $getAuthenticatedUserEntityService;
 
-    public function __construct(CreateChatMessageServiceInterface $createChatMessageService, GetAuthenticatedUserEntityServiceInterface $getAuthenticatedUserEntityService)
+    public function __construct(
+        ChatRoomMembershipServiceInterface $chatRoomMembershipService,
+        CreateChatMessageServiceInterface $createChatMessageService, 
+        GetAuthenticatedUserEntityServiceInterface $getAuthenticatedUserEntityService
+    )
     {
+        $this->chatRoomMembershipService = $chatRoomMembershipService;
         $this->createChatMessageService = $createChatMessageService;
         $this->getAuthenticatedUserEntityService = $getAuthenticatedUserEntityService;
     }
@@ -23,7 +31,11 @@ class SendMessageUseCase
         // ユーザーの特定
         $userEntity = $this->getAuthenticatedUserEntityService->get();
 
-        // TODO: Roomにユーザーが登録されているか確認
+        // Roomにユーザーが登録されているか確認
+        if(!$this->chatRoomMembershipService->isUserInChatRoom($userEntity->getId(), $roomId))
+        {
+            throw new AuthorizationException(config('response.error.send.unauthorized'));
+        }
 
         // データ登録用のChatMessageEntityの作成
         $creatingChatMessageEntity = $userEntity->createMessage($roomId, $message);

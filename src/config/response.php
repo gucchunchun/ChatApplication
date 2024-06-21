@@ -10,6 +10,9 @@ return [
     'login' => 'WrongCredentials',
     'register' => [
       'name' => 'MissingUserNameData'
-    ]
+    ],
+    'send' => [
+      'unauthorized' => 'UserNotInSpecifiedCharRoom'
+    ],
   ]
 ];

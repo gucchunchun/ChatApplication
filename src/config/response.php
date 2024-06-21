@@ -8,5 +8,8 @@ return [
   ],
   'error' => [
     'login' => 'WrongCredentials',
+    'register' => [
+      'name' => 'MissingUserNameData'
+    ]
   ]
 ];

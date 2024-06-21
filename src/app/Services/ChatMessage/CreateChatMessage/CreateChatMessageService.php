@@ -2,11 +2,12 @@
 
 namespace App\Services\ChatMessage\CreateChatMessage;
 
+use App\Services\ChatMessage\CreateChatMessage\CreateChatMessageServiceInterface;
 use App\Entities\Factory\ChatMessageEntityFactory;
 use App\Repositories\ChatMessage\ChatMessageRepositoryInterface;
 use App\Entities\ChatMessageEntity;
 
-class CreateChatMessageService
+class CreateChatMessageService implements CreateChatMessageServiceInterface
 {
     private  $chatMessageEntityFactory;
     private $chatMessageRepository;

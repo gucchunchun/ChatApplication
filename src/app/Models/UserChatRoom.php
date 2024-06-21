@@ -5,6 +5,9 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Factories\Factory;
+
+use Database\Factories\UserChatRoomFactory;
 
 class UserChatRoom extends Model
 {
@@ -20,6 +23,11 @@ class UserChatRoom extends Model
         'room_id',
         'created_at',
     ];
+
+    protected static function newFactory(): Factory
+    {
+        return UserChatRoomFactory::new();
+    }
 
     // Relations
     public function chatRoom(): BelongsTo

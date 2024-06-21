@@ -52,6 +52,8 @@ class SendMessageUseCase
             $message
         );
 
+        logger('published event');
+
         return $createdChatMessageEntity;
     }
 }

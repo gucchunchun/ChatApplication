@@ -4,12 +4,13 @@ namespace App\Services\SNSAuth;
 
 use Laravel\Socialite\Facades\Socialite;
 
+use App\Services\SNSAuth\SNSConnectServiceInterface;
 use App\Entities\Factory\UserEntityFactory;
 use App\Enum\SNSProvider;
 use App\Entities\UserEntity;
 use App\DTO\UserData;
 
-class SNSConnectService
+class SNSConnectService implements SNSConnectServiceInterface
 {
     private $userEntityFactory;
     public function __construct(UserEntityFactory $userEntityFactory)

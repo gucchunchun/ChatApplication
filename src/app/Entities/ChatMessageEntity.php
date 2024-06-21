@@ -8,16 +8,16 @@ use App\Entities\UserEntity;
 
 class ChatMessageEntity implements EntityInterface
 {
-    const ID_RULES = ['exist:chat_messages,id'];
-    const ROOM_ID_RULES = ['exist:chat_rooms,id'];
-    const SENDER_ID_RULES = ['exist:users,id'];
+    const ID_RULES = ['exists:chat_messages,id'];
+    const ROOM_ID_RULES = ['exists:chat_rooms,id'];
+    const SENDER_ID_RULES = ['exists:users,id'];
     const MESSAGE_RULES = ['max:1000'];
 
     private ?int $id;
     private ChatRoomEntity $room;
     private UserEntity $sender;
     private string $message;
-    private string $createdAt;
+    private ?string $createdAt;
 
     public function __construct(?int $id, ChatRoomEntity $room, UserEntity $sender, string $message, string $createdAt = null)
     {
@@ -25,7 +25,7 @@ class ChatMessageEntity implements EntityInterface
         $this->room = $room;
         $this->sender = $sender;
         $this->message = $message;
-        $this->createdAt = $this->formatDate($createdAt);
+        $this->createdAt = $createdAt? $this->formatDate($createdAt): $createdAt;
     }
 
     public function getId(): ?int

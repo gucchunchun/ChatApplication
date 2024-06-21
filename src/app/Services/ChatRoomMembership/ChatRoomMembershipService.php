@@ -2,10 +2,11 @@
 
 namespace App\Services\ChatRoomMembership;
 
+use App\Services\ChatRoomMembership\ChatRoomMembershipServiceInterface;
 use App\Repositories\UserChatRoom\UserChatRoomRepositoryInterface;
 use App\DTO\UserChatRoomSearchData;
 
-class ChatRoomMembershipService
+class ChatRoomMembershipService implements ChatRoomMembershipServiceInterface
 {
     private $userChatRoomRepository;
     public function __construct(UserChatRoomRepositoryInterface $userChatRoomRepository)

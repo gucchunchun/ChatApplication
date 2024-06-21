@@ -10,7 +10,7 @@ use App\Enum\SNSProvider;
 class UserEntity implements UpdatableEntityInterface
 {
     // Requestバリデーション内で使用するビジネスロジックに関わる値
-    const ID_RULES = ['exist:users,id'];
+    const ID_RULES = ['exists:users,id'];
     const NAME_RULES = ['min:8', 'max:24'];
     const EMAIL_RULES = ['email:strict'];
     const PASSWORD_RULES = ['min:10', 'max:32'];

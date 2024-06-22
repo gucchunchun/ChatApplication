@@ -32,8 +32,7 @@ class LoginUseCase
         }
         catch (AuthenticationException $e)
         {
-            // TODO: ERROR MESSAGE CONFIG FILE作成
-            throw new AuthenticationException();
+            throw new AuthenticationException(config('response.error.login'));
         }
     }
 }

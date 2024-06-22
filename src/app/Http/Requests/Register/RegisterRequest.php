@@ -4,6 +4,8 @@ namespace App\Http\Requests\Register;
 
 use Illuminate\Foundation\Http\FormRequest;
 
+use App\Entities\UserEntity;
+
 class RegisterRequest extends FormRequest
 {
     /**
@@ -11,7 +13,7 @@ class RegisterRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return false;
+        return true;
     }
 
     /**
@@ -22,7 +24,9 @@ class RegisterRequest extends FormRequest
     public function rules(): array
     {
         return [
-            //
+            'name' => array_unshift(UserEntity::NAME_RULES, 'required'),
+            'email' => array_unshift(UserEntity::EMAIL_RULES, 'required'),
+            'password' => array_merge(['required'], UserEntity::PASSWORD_RULES, ['confirmed'])
         ];
     }
 }

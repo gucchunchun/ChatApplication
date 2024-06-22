@@ -7,14 +7,14 @@ use App\Entities\ValueObject\ChannelName;
 
 class ChatRoomEntity implements UpdatableEntityInterface
 {
-    const ID_RULES = ['exist:chat_rooms,id'];
+    const ID_RULES = ['exists:chat_rooms,id'];
     const NAME_RULES = ['min:1', 'max:24'];
     const UPDATABLES = [
         'name'
     ];
 
     private ?int $id;
-    private string $name;
+    private ?string $name;
     private ChannelName $channelName;
 
     public function __construct(?int $id, ?string $name)
@@ -32,9 +32,9 @@ class ChatRoomEntity implements UpdatableEntityInterface
     {
         return $this->name;
     }
-    public function getChannelName(): ChannelName
+    public function getChannelName(): string
     {
-        return $this->channelName;
+        return $this->channelName->getName();
     }
     public function getUpdatableFields(): array
     {

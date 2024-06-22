@@ -1,6 +1,6 @@
 <?php
 
-namespace Tests\Unit\Repository\User;
+namespace Tests\Feature\Repository\User;
 
 use Tests\TestCase;
 use Illuminate\Foundation\Testing\RefreshDatabase;
@@ -11,7 +11,7 @@ use App\Models\User;
 use App\Entities\UserEntity;
 use App\Enum\SNSProvider;
 
-class UserDeleteTest extends TestCase
+class DeleteTest extends TestCase
 {
     use RefreshDatabase;
 

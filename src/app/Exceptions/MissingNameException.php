@@ -7,9 +7,9 @@ use Exception;
 class MissingNameException extends Exception
 {
     private $userData;
-    public function __construct(array $userData, string $message = "Nickname is required")
+    public function __construct(array $userData, string $message = config('response.error.register.name'))
     {
-        parent::__construct($this->message);
+        parent::__construct($message);
 
         $this->userData = $userData;
     }

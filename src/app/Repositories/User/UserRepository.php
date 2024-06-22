@@ -3,23 +3,39 @@
 namespace App\Repositories\User;
 
 use App\Repositories\User\UserRepositoryInterface;
-use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Symfony\Component\HttpKernel\Exception\HttpException;
-use App\Repositories\Traits\Delete;
+use Illuminate\Database\Eloquent\ModelNotFoundException;
 use App\Repositories\Traits\Update;
 use App\Models\User;
 use App\Entities\UserEntity;
 
 class UserRepository implements UserRepositoryInterface
 {
-  use Delete, Update;
+  use Update;
   private $modelClass;
   public function __construct(User $userModelClass)
-    {
+  {
         $this->modelClass = $userModelClass;
   }
-  public function findById(string|int $id): ?User
+  public function delete(string $id): void
+  {
+    try
     {
+      $model = $this->modelClass->findOrFail($id);
+      $model->delete();
+    }
+    catch (ModelNotFoundException $e)
+    {
+      throw new ModelNotFoundException($e->getMessage());
+    }
+    catch (\Exception $e)
+    {
+      logger($e->getMessage());
+      throw new HttpException(500, $e->getMessage());
+    }
+  }
+  public function findById(string|int $id): ?User
+  {
       try
       {
         return $this->modelClass->find($id);

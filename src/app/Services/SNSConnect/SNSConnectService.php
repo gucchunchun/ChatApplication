@@ -3,13 +3,14 @@
 namespace App\Services\SNSAuth;
 
 use Laravel\Socialite\Facades\Socialite;
-use Illuminate\Http\RedirectResponse;
 
+use App\Services\SNSAuth\SNSConnectServiceInterface;
 use App\Entities\Factory\UserEntityFactory;
 use App\Enum\SNSProvider;
 use App\Entities\UserEntity;
+use App\DTO\UserData;
 
-class SNSConnectService
+class SNSConnectService implements SNSConnectServiceInterface
 {
     private $userEntityFactory;
     public function __construct(UserEntityFactory $userEntityFactory)
@@ -20,12 +21,14 @@ class SNSConnectService
     {
         $user = Socialite::driver($provider->value)->user();
 
-        $userData = [
-            'name' => $user->getNickname(),
-            'email' => $user->getEmail(),
-            'provider' => $provider,
-            'snsId' => $user->getId()
-        ];
+        $userData = new UserData(
+            null,
+            $user->getNickname(),
+            $user->getEmail(),
+            null,
+            $provider,
+            $user->getId()
+        );
 
         return $this->userEntityFactory->createByData($userData);
     }

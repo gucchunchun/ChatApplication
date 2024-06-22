@@ -19,7 +19,7 @@ use App\Services\ChatMessage\CreateChatMessage\CreateChatMessageServiceInterface
 use App\Services\ChatRoomMembership\ChatRoomMembershipServiceInterface;
 use App\Services\GetAuthenticatedUserEntity\GetAuthenticatedUserEntityServiceInterface;
 use App\Services\User\CreateUser\CreateUserServiceInterface;
-use App\Services\SNSAuth\SNSConnectServiceInterface;
+use App\Services\SNSConnect\SNSConnectServiceInterface;
 
 
 class UseCaseProvider extends ServiceProvider

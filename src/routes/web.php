@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\LoginController;
+use App\Http\Controllers\SNSLoginController;
 
 /*
 |--------------------------------------------------------------------------
@@ -12,7 +14,6 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
-
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::post('/login', LoginController::class);
+Route::get('/login/github', [SNSLoginController::class, 'getGithubRedirectUrl']);
+Route::post('/login/github', [SNSLoginController::class, 'github']);

@@ -24,8 +24,8 @@ class RegisterRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'name' => array_merge('required', UserEntity::NAME_RULES),
-            'email' => array_merge('required', UserEntity::EMAIL_RULES),
+            'name' => array_merge(['required'], UserEntity::NAME_RULES),
+            'email' => array_merge(['required'], UserEntity::EMAIL_RULES),
             'password' => array_merge(['required'], UserEntity::PASSWORD_RULES, ['confirmed'])
         ];
     }

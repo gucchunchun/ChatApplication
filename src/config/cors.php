@@ -15,7 +15,12 @@ return [
     |
     */
 
-    'paths' => ['api/*', 'sanctum/csrf-cookie'],
+    'paths' => [       
+         'api/*',
+        'login', // 追記
+        'logout', // 追記
+        'sanctum/csrf-cookie',
+    ],
 
     'allowed_methods' => ['*'],
 

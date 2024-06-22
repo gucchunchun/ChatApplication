@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Services\SNSAuth;
+namespace App\Services\SNSConnect;
 
 use Laravel\Socialite\Facades\Socialite;
 
-use App\Services\SNSAuth\SNSConnectServiceInterface;
+use App\Services\SNSConnect\SNSConnectServiceInterface;
 use App\Entities\Factory\UserEntityFactory;
 use App\Enum\SNSProvider;
 use App\Entities\UserEntity;

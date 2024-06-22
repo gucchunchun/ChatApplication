@@ -8,7 +8,7 @@ use Mockery;
 use App\UseCases\SNSLoginUseCase;
 use App\Services\Auth\AuthServiceInterface;
 use App\Services\User\CreateUser\CreateUserServiceInterface;
-use App\Services\SNSAuth\SNSConnectServiceInterface;
+use App\Services\SNSConnect\SNSConnectServiceInterface;
 use Illuminate\Auth\AuthenticationException;
 use App\Exceptions\MissingNameException;
 use App\Entities\UserEntity;
@@ -74,7 +74,7 @@ class SNSLoginTest extends TestCase
         ->with(SNSProvider::GIT_HUB, self::SNS_ID)
         ->andReturn($userEntity);
 
-        $return = $this->snsLoginUseCase->gitHub();
+        $return = $this->snsLoginUseCase->github();
 
         $this->assertEquals($userEntity, $return['user']);
         $this->assertFalse($return['new']);
@@ -113,7 +113,7 @@ class SNSLoginTest extends TestCase
         ->with($tempUserEntity)
         ->andReturn($userEntity);
 
-        $return = $this->snsLoginUseCase->gitHub();
+        $return = $this->snsLoginUseCase->github();
 
         $this->assertEquals($userEntity, $return['user']);
         $this->assertTrue($return['new']);
@@ -141,7 +141,7 @@ class SNSLoginTest extends TestCase
 
         $this->expectException(MissingNameException::class);
 
-        $return = $this->snsLoginUseCase->gitHub();
+        $return = $this->snsLoginUseCase->github();
 
         dd($return);
     }

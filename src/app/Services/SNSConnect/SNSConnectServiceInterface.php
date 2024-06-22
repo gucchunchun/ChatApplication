@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Services\SNSAuth;
+namespace App\Services\SNSConnect;
 
 use App\Enum\SNSProvider;
 use App\Entities\UserEntity;

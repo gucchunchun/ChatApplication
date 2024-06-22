@@ -17,8 +17,8 @@ use App\Services\GetAuthenticatedUserEntity\GetAuthenticatedUserEntityService;
 use App\Services\GetUserEntity\GetUserEntityServiceInterface;
 use App\Services\GetUserEntity\GetUserEntityService;
 // SNSConnect
-use App\Services\SNSAuth\SNSConnectServiceInterface;
-use App\Services\SNSAuth\SNSConnectService;
+use App\Services\SNSConnect\SNSConnectServiceInterface;
+use App\Services\SNSConnect\SNSConnectService;
 
 // CHAT MESSAGE
 // Create

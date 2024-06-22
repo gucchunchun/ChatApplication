@@ -46,10 +46,10 @@ class GithubTest extends TestCase
         ];
 
         $this->snsLoginUseCase
-        ->shouldReceive('gitHub')
+        ->shouldReceive('github')
         ->andReturn($result);
 
-        $response = $this->snsLoginController->gitHub();
+        $response = $this->snsLoginController->github();
 
         $this->assertEquals(200, $response->getStatusCode());
 
@@ -75,10 +75,10 @@ class GithubTest extends TestCase
         ];
 
         $this->snsLoginUseCase
-        ->shouldReceive('gitHub')
+        ->shouldReceive('github')
         ->andReturn($result);
 
-        $response = $this->snsLoginController->gitHub();
+        $response = $this->snsLoginController->github();
 
         $this->assertEquals(201, $response->getStatusCode());
 

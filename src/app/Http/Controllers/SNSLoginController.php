@@ -16,9 +16,10 @@ class SNSLoginController extends Controller
         $this->snsLoginUseCase = $snsLoginUseCase;
     }
 
-    public function getGitHubRedirectUrl(): JsonResponse
+    public function getGithubRedirectUrl(): JsonResponse
     {
-        $url = $this->snsLoginUseCase->getGitHubRedirectUrl();
+        // TODO: login/{provider}というURLに変更することで複数対応を簡単にできるように
+        $url = $this->snsLoginUseCase->getGithubRedirectUrl();
 
         return $this->createResponse(
             config('response.success.redirect'),
@@ -26,9 +27,11 @@ class SNSLoginController extends Controller
         );
     }
 
-    public function gitHub(): JsonResponse
+    public function github(): JsonResponse
     {
-        $result = $this->snsLoginUseCase->gitHub();
+        // TODO: login/{provider}というURLに変更することで複数対応を簡単にできるように
+        // TODO: ここでニックネームをフロント側で入力させても良いかも
+        $result = $this->snsLoginUseCase->github();
 
         return $this->createResponseFromResult($result);
     }

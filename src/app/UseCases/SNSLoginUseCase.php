@@ -4,7 +4,7 @@ namespace App\UseCases;
 
 use App\Services\Auth\AuthServiceInterface;
 use App\Services\User\CreateUser\CreateUserServiceInterface;
-use App\Services\SNSAuth\SNSConnectServiceInterface;
+use App\Services\SNSConnect\SNSConnectServiceInterface;
 use Illuminate\Auth\AuthenticationException;
 use App\Exceptions\MissingNameException;
 use App\Entities\UserEntity;
@@ -29,7 +29,7 @@ class SNSLoginUseCase
     /**
      * @return array ['new' => Is User New, 'user' => UserEntity]
      */
-    public function gitHub(): array
+    public function github(): array
     {
         try
         {
@@ -45,7 +45,7 @@ class SNSLoginUseCase
             return $this->registeredAs($this->createUserService->create($tempUserEntity));
         }
     }
-    public function getGitHubRedirectUrl(): string
+    public function getGithubRedirectUrl(): string
     {
         return $this->SNSConnectService->getRedirectUrl(SNSProvider::GIT_HUB);
     }

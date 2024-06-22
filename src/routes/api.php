@@ -3,10 +3,8 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
-use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\SendMessageController;
-use App\Http\Controllers\SNSLoginController;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,14 +17,9 @@ use App\Http\Controllers\SNSLoginController;
 |
 */
 
-Route::post('/login', LoginController::class);
-Route::get('/login/git-hub', [SNSLoginController::class, 'getGitHubRedirectUrl']);
-Route::post('/login/git-hub', [SNSLoginController::class, 'gitHub']);
-
 Route::post('/register', RegisterController::class);
 
 Route::middleware('auth')
-->group(function() {
+->group(function() {  
+  Route::post('/message/send', SendMessageController::class);
 });
-
-Route::post('/message/send', SendMessageController::class);

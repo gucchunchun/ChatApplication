@@ -27,5 +27,6 @@ Route::post('/register', RegisterController::class);
 
 Route::middleware('auth')
 ->group(function() {
-  Route::post('/message/send', SendMessageController::class);
 });
+
+Route::post('/message/send', SendMessageController::class);
